@@ -1,6 +1,5 @@
 import React from 'react';
 import { View } from '../types';
-import profileImage from './assets/abhi2.jpg';
 
 interface HeroProps {
   onNavigate: (view: View) => void;
@@ -61,7 +60,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
       <div className="flex-1 flex justify-center md:justify-end">
         <div 
           className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 aspect-square bg-center bg-no-repeat bg-cover rounded-full border-4 border-slate-200 dark:border-white/10 shadow-2xl"
-          style={{ backgroundImage: `url("${profileImage}")` }}
+          style={{ backgroundImage: 'url("/abhi.jpg")' }}
           aria-label="Professional headshot of Abhimanyu R B"
         />
       </div>

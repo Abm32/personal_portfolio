@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View } from '../types';
-import cvPdf from './assets/abhimanyu_cv.pdf';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -56,7 +55,7 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, onNavigate }) => 
               </nav>
               {activeView === 'skills' ? (
                 <a 
-                  href={cvPdf} 
+                  href="/abhimanyu_cv.pdf" 
                   download="Abhimanyu_R_B_CV.pdf"
                   className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors"
                 >
@@ -108,7 +107,7 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, onNavigate }) => 
                 ))}
                 {activeView === 'skills' ? (
                   <a 
-                    href={cvPdf} 
+                    href="/abhimanyu_cv.pdf" 
                     download="Abhimanyu_R_B_CV.pdf"
                     className="mt-2 w-full flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold"
                   >
