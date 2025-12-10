@@ -63,9 +63,14 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, onNavigate }) => 
                   <span className="truncate">Download CV</span>
                 </a>
               ) : (
-                <button className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                <a 
+                  href="https://www.linkedin.com/in/abhimanyurb/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors"
+                >
                   <span className="truncate">Let's Connect</span>
-                </button>
+                </a>
               )}
             </div>
 
@@ -110,9 +115,14 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, onNavigate }) => 
                     <span>Download CV</span>
                   </a>
                 ) : (
-                  <button className="mt-2 w-full flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold">
+                  <a 
+                    href="https://www.linkedin.com/in/abhimanyurb/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 w-full flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold"
+                  >
                     <span>Let's Connect</span>
-                  </button>
+                  </a>
                 )}
               </nav>
           </div>
