@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from '../types';
-import profileImage from './assets/abhi.jpg';
+import profileImage from './assets/abhi2.jpg';
 
 interface HeroProps {
   onNavigate: (view: View) => void;
@@ -26,9 +26,14 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           >
             <span className="truncate">View My Work</span>
           </button>
-          <button className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-slate-200 dark:bg-white/10 hover:bg-slate-300 dark:hover:bg-white/20 text-slate-900 dark:text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors">
+          <a
+            href="https://www.linkedin.com/in/abhimanyurb/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-slate-200 dark:bg-white/10 hover:bg-slate-300 dark:hover:bg-white/20 text-slate-900 dark:text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors"
+          >
             <span className="truncate">Let's Connect</span>
-          </button>
+          </a>
         </div>
 
         <div className="flex flex-wrap justify-center md:justify-start gap-6 pt-4">
