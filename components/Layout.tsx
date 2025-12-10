@@ -147,7 +147,7 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, onNavigate }) => 
               <span className="material-symbols-outlined">sms</span>
             </a>
           </div>
-          <p className="text-zinc-400 text-sm font-normal leading-normal">© 2024 Abhimanyu R B. All rights reserved.</p>
+          <p className="text-zinc-400 text-sm font-normal leading-normal">© {new Date().getFullYear()} Abhimanyu R B. All rights reserved.</p>
         </div>
       </footer>
     </div>
