@@ -54,6 +54,12 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </div>
             <p className="text-slate-600 dark:text-white/70 text-sm font-medium leading-normal group-hover:text-primary transition-colors">Twitter</p>
           </a>
+          <a href="https://apogee.abhimanyurb.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 text-center w-20 group cursor-pointer">
+            <div className="rounded-full bg-slate-200 dark:bg-white/10 group-hover:bg-primary/10 p-4 transition-colors">
+              <span className="material-symbols-outlined text-slate-700 dark:text-white text-2xl group-hover:text-primary">article</span>
+            </div>
+            <p className="text-slate-600 dark:text-white/70 text-sm font-medium leading-normal group-hover:text-primary transition-colors">Blog</p>
+          </a>
         </div>
       </div>
 

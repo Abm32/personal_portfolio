@@ -52,6 +52,14 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, onNavigate }) => 
                     {item.label}
                   </button>
                 ))}
+                <a
+                  href="https://apogee.abhimanyurb.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium leading-normal transition-colors text-slate-600 dark:text-zinc-300 hover:text-primary dark:hover:text-white"
+                >
+                  Blog
+                </a>
               </nav>
               {activeView === 'skills' ? (
                 <a 
@@ -105,6 +113,15 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, onNavigate }) => 
                     {item.label}
                   </button>
                 ))}
+                <a
+                  href="https://apogee.abhimanyurb.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-left text-sm font-medium leading-normal p-2 text-slate-600 dark:text-zinc-300"
+                >
+                  Blog
+                </a>
                 {activeView === 'skills' ? (
                   <a 
                     href="/abhimanyu_cv.pdf" 
@@ -145,6 +162,9 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, onNavigate }) => 
             </a>
             <a href="https://x.com/AbhimanyuRB2" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-primary transition-colors">
               <span className="material-symbols-outlined">sms</span>
+            </a>
+            <a href="https://apogee.abhimanyurb.com/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-primary transition-colors">
+              <span className="material-symbols-outlined">article</span>
             </a>
           </div>
           <p className="text-zinc-400 text-sm font-normal leading-normal">© {new Date().getFullYear()} Abhimanyu R B. All rights reserved.</p>

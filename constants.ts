@@ -228,6 +228,12 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/Parsh06/eth_global_2025"
   },
   {
+    title: "ETHMumbai Maxi Checker",
+    description: "A maxi checker tool for ETHMumbai that measures the closeness and engagement of participants with the ETHMumbai community.",
+    tags: ["Web3", "Community", "ETHMumbai", "Analytics"],
+    link: "https://ethmumbai.maxichecker.abhimanyurb.com/"
+  },
+  {
     title: "YIP 8.0 Portal",
     description: "Official portal for YIP 8.0 built from scratch, handling 5L+ users. Features idea tracking, approval workflows, and admin privileges. Hosted on AWS.",
     tags: ["Next.js", "AWS", "PostgreSQL", "Node.js", "Scalability"],
