@@ -214,6 +214,20 @@ export const EXPERIENCES: Experience[] = [
 
 export const PROJECTS: Project[] = [
   {
+    title: "BlinkGuard",
+    description: "An open-source browser extension and API service that pre-validates Solana Blinks (Blockchain Links) directly within Twitter/X. Provides real-time transaction simulation, community registry of malicious URLs, and visual safety indicators to protect users from drainers and suspicious contracts.",
+    tags: ["Browser Extension", "Solana", "Web3", "TypeScript", "React", "Next.js", "PostgreSQL", "Security"],
+    link: "https://blinkguard.abhimanyurb.com/",
+    github: "https://github.com/Abm32/BlinkGuard",
+    images: [
+      "/blinkguard/ss1.png",
+      "/blinkguard/ss2.png",
+      "/blinkguard/ss3.png",
+      "/blinkguard/ss4.png",
+      "/blinkguard/ss5.png"
+    ]
+  },
+  {
     title: "ContribProof",
     description: "A decentralized stake-to-learn platform where students stake ETH to enroll in courses. Features AI validation of contributions to mint soulbound tokens (SBTs) for onchain CVs.",
     tags: ["Next.js", "Solidity", "Wagmi", "Python", "AI", "Web3"],
