@@ -92,6 +92,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   <span className="material-symbols-outlined text-lg">code</span>
                 </a>
               )}
+              {project.chromeStore && (
+                <a href={project.chromeStore} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center rounded-lg h-8 w-8 shrink-0 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-white transition-all" title="Install Extension">
+                  <span className="material-symbols-outlined text-lg">extension</span>
+                </a>
+              )}
               {project.link && (
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center rounded-lg h-8 w-8 shrink-0 bg-primary/10 hover:bg-primary text-primary hover:text-white transition-all" title="View Project">
                   <span className="material-symbols-outlined text-lg">open_in_new</span>

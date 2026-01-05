@@ -219,6 +219,7 @@ export const PROJECTS: Project[] = [
     tags: ["Browser Extension", "Solana", "Web3", "TypeScript", "React", "Next.js", "PostgreSQL", "Security"],
     link: "https://blinkguard.abhimanyurb.com/",
     github: "https://github.com/Abm32/BlinkGuard",
+    chromeStore: "https://chromewebstore.google.com/detail/bfdpibejhkfociohbnldkkmbbjbhgabj",
     images: [
       "/blinkguard/ss1.png",
       "/blinkguard/ss2.png",

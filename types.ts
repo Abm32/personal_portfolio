@@ -4,6 +4,7 @@ export interface Project {
   tags: string[];
   link?: string;
   github?: string;
+  chromeStore?: string;
   images?: string[];
 }
 
