@@ -1,88 +1,81 @@
 import React from 'react';
-import { SKILL_CATEGORIES, CERTIFICATIONS, ACHIEVEMENTS } from '../constants';
+import { ACHIEVEMENTS, CERTIFICATIONS, SKILL_CATEGORIES } from '../constants';
 
 const Skills: React.FC = () => {
   return (
-    <div className="flex flex-col gap-12 pt-10 pb-20">
-      
-      {/* Header */}
-      <div className="flex flex-col gap-3 px-4">
-        <h1 className="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Skills & Volunteer Work</h1>
-        <p className="text-slate-500 dark:text-[#9da4b9] text-base font-normal leading-normal">
-          A collection of my technical abilities, certifications, and community contributions.
+    <div className="space-y-10 py-6 sm:py-10">
+      <section className="section-shell">
+        <p className="section-kicker">Capabilities</p>
+        <h1 className="section-title mt-4">Technical range, certifications, and community work.</h1>
+        <p className="section-copy mt-4 max-w-3xl">
+          I care about depth, but I also care about being useful across the full arc of product work: design sense,
+          frontend polish, backend reliability, cloud delivery, and people around the project.
         </p>
-      </div>
+      </section>
 
-      {/* Technical Skills - Accordions */}
-      <section>
-        <h2 className="text-slate-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-4">Technical Skills</h2>
-        <div className="flex flex-col px-4 gap-3">
-          {SKILL_CATEGORIES.map((skill, index) => (
-            <details key={index} className="flex flex-col rounded-xl border border-slate-200 dark:border-[#3b4154] bg-white dark:bg-slate-900/50 px-[15px] py-[7px] group transition-all hover:border-primary/40" open={index === 0}>
-              <summary className="flex cursor-pointer items-center justify-between gap-6 py-3 select-none">
-                <p className="text-slate-800 dark:text-white text-base font-medium leading-normal">{skill.name}</p>
-                <div className="text-slate-600 dark:text-white group-open:rotate-180 transition-transform duration-300">
-                  <span className="material-symbols-outlined">expand_more</span>
+      <section className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="glass-panel rounded-[2rem] p-6 sm:p-7">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--accent)]">Technical skills</p>
+          <div className="mt-5 space-y-4">
+            {SKILL_CATEGORIES.map((skill, index) => (
+              <details key={skill.name} className="rounded-[1.35rem] border border-white/10 bg-white/[0.03] px-5 py-4" open={index === 0}>
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-white">
+                  <span>{skill.name}</span>
+                  <span className="material-symbols-outlined text-[var(--accent)]">expand_more</span>
+                </summary>
+                <p className="mt-4 border-t border-white/10 pt-4 text-sm leading-7 text-white/70">{skill.items}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid gap-6">
+          <div className="glass-panel rounded-[2rem] p-6 sm:p-7">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--accent)]">Certifications</p>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {CERTIFICATIONS.map((cert) => (
+                <div
+                  key={cert.title}
+                  className="rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-5 transition duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/30"
+                >
+                  <span className="material-symbols-outlined text-4xl text-[var(--accent)]">{cert.icon}</span>
+                  <h3 className="mt-4 text-lg font-semibold text-white">{cert.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/65">{cert.issuer}</p>
                 </div>
-              </summary>
-              <div className="overflow-hidden transition-all duration-300">
-                <p className="text-slate-500 dark:text-[#9da4b9] text-sm font-normal leading-normal pb-3 pt-1 border-t border-slate-100 dark:border-white/5 mt-2">
-                  {skill.items}
-                </p>
-              </div>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section>
-        <h2 className="text-slate-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-4">Certifications</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
-          {CERTIFICATIONS.map((cert, index) => (
-            <div key={index} className="flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-[#3b4154] bg-white dark:bg-slate-900/50 p-5 transition-all hover:shadow-lg hover:border-primary/50 dark:hover:border-primary group">
-              <span className="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform origin-left">{cert.icon}</span>
-              <div>
-                <h3 className="font-bold text-slate-800 dark:text-white text-lg">{cert.title}</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{cert.issuer}</p>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
 
-      {/* Volunteer & Achievements */}
-      <section>
-        <h2 className="text-slate-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-4">Volunteer & Achievements</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
-          {ACHIEVEMENTS.map((item, index) => (
-            <div key={index} className="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-[#3b4154] bg-white dark:bg-slate-900/50 p-6 transition-all hover:shadow-lg hover:border-primary/50 dark:hover:border-primary h-full">
-              <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary text-2xl">{item.icon}</span>
-                <h3 className="font-bold text-slate-800 dark:text-white text-lg">{item.role} {item.organization && `@ ${item.organization}`}</h3>
-              </div>
-              <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed flex-grow">
-                {item.description}
-              </p>
-              <div className="flex flex-wrap gap-2 pt-2">
-                {item.tags.map((tag, tIndex) => (
-                  <span 
-                    key={tIndex} 
-                    className={`text-xs font-medium py-1 px-3 rounded-full ${
-                      tIndex === 0 
-                        ? 'text-primary bg-primary/20' 
-                        : 'text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800'
-                    }`}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+          <div className="glass-panel rounded-[2rem] p-6 sm:p-7">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--accent)]">Volunteer and achievements</p>
+            <div className="mt-5 grid gap-4">
+              {ACHIEVEMENTS.map((item) => (
+                <div key={`${item.role}-${item.organization}`} className="rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-5">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-[var(--accent)]/12 text-[var(--accent)]">
+                      <span className="material-symbols-outlined">{item.icon}</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">
+                        {item.role}
+                        {item.organization ? ` @ ${item.organization}` : ''}
+                      </h3>
+                      <p className="mt-2 text-sm leading-7 text-white/68">{item.description}</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="rounded-full border border-white/10 bg-black/20 px-3 py-1.5 text-xs font-medium text-white/74">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
-
     </div>
   );
 };

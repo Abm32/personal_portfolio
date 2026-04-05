@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
@@ -9,21 +9,19 @@ import { View } from './types';
 const App: React.FC = () => {
   const [activeView, setActiveView] = useState<View>('home');
 
-  // Simple scrolling to top on view change
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activeView]);
 
   const renderView = () => {
     switch (activeView) {
-      case 'home':
-        return <Hero onNavigate={setActiveView} />;
       case 'projects':
         return <Projects />;
       case 'experience':
         return <Experience />;
       case 'skills':
         return <Skills />;
+      case 'home':
       default:
         return <Hero onNavigate={setActiveView} />;
     }
@@ -31,7 +29,7 @@ const App: React.FC = () => {
 
   return (
     <Layout activeView={activeView} onNavigate={setActiveView}>
-      <div className="animate-in fade-in duration-500 slide-in-from-bottom-4">
+      <div key={activeView} className="page-enter">
         {renderView()}
       </div>
     </Layout>

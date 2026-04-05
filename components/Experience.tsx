@@ -3,54 +3,74 @@ import { EXPERIENCES } from '../constants';
 
 const Experience: React.FC = () => {
   return (
-    <div className="flex flex-col gap-12 sm:gap-16 pt-10">
-      <div className="flex flex-wrap justify-between gap-3 p-4">
-        <div className="flex min-w-72 flex-col gap-3">
-          <h1 className="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">My Professional Experience</h1>
-          <p className="text-slate-500 dark:text-zinc-400 text-base font-normal leading-normal">
-            A timeline of my professional journey, highlighting key roles, contributions, and skills.
-          </p>
+    <div className="space-y-10 py-6 sm:py-10">
+      <section className="section-shell">
+        <p className="section-kicker">Professional journey</p>
+        <div className="mt-4 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <h1 className="section-title">A track record across product work, leadership, and execution.</h1>
+            <p className="section-copy mt-4 max-w-3xl">
+              I&apos;ve moved between hands-on engineering, startup building, technical leadership, and community
+              work. That mix shaped how I build: practical, collaborative, and fast without losing care.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+            <div className="glass-panel rounded-[1.5rem] p-4 text-center">
+              <p className="text-2xl font-bold text-white">20+</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.22em] text-[var(--muted)]">Roles and initiatives</p>
+            </div>
+            <div className="glass-panel rounded-[1.5rem] p-4 text-center">
+              <p className="text-2xl font-bold text-white">AWS</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.22em] text-[var(--muted)]">Cloud and DevOps</p>
+            </div>
+            <div className="glass-panel col-span-2 rounded-[1.5rem] p-4 text-center sm:col-span-1">
+              <p className="text-2xl font-bold text-white">Builder</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.22em] text-[var(--muted)]">Engineer and founder</p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="relative pl-8 sm:pl-12">
-        {/* Timeline Line */}
-        <div className="absolute left-4 sm:left-6 top-2 bottom-0 w-0.5 bg-gray-300 dark:bg-primary/30"></div>
-
-        {/* Timeline Items */}
-        <div className="space-y-12">
-          {EXPERIENCES.map((exp, index) => (
-            <div key={index} className="relative group">
-              {/* Dot */}
-              <div className="absolute -left-[2.1rem] sm:-left-[2.6rem] top-1 flex h-8 w-8 items-center justify-center rounded-full bg-background-light dark:bg-background-dark ring-4 ring-gray-200 dark:ring-primary/30 group-hover:ring-primary/60 transition-all">
-                <div className="h-3 w-3 rounded-full bg-primary group-hover:scale-125 transition-transform"></div>
+      <section className="relative pl-0 sm:pl-6">
+        <div className="absolute left-3 top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-[var(--accent)]/0 via-[var(--accent)]/55 to-[var(--accent)]/0 sm:block" />
+        <div className="space-y-6">
+          {EXPERIENCES.map((exp) => (
+            <article key={`${exp.role}-${exp.company}-${exp.date}`} className="relative sm:pl-10">
+              <div className="absolute left-0 top-8 hidden h-6 w-6 items-center justify-center rounded-full border border-[var(--accent)]/35 bg-[var(--surface-strong)] sm:flex">
+                <div className="h-2.5 w-2.5 rounded-full bg-[var(--accent)] shadow-[0_0_18px_rgba(138,255,191,0.65)]" />
               </div>
-              
-              <div className="ml-4 sm:ml-8">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.role}</h3>
-                  <p className="text-sm text-primary font-medium bg-primary/10 px-2 py-0.5 rounded w-fit">{exp.date}</p>
+              <div className="glass-panel rounded-[1.8rem] p-6 transition duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/20 sm:p-7">
+                <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.28em] text-[var(--muted)]">{exp.company}</p>
+                    <h2 className="mt-2 text-2xl font-bold text-white">{exp.role}</h2>
+                  </div>
+                  <div className="rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/10 px-4 py-2 text-sm font-medium text-[var(--accent)]">
+                    {exp.date}
+                  </div>
                 </div>
-                <p className="text-lg text-slate-700 dark:text-zinc-300 font-medium mb-3">{exp.company}</p>
-                
-                <ul className="list-disc pl-5 space-y-2 text-slate-600 dark:text-zinc-400 mb-4 marker:text-primary">
-                  {exp.description.map((desc, i) => (
-                    <li key={i}>{desc}</li>
+
+                <ul className="mt-5 space-y-3 text-sm leading-7 text-white/72 sm:text-base">
+                  {exp.description.map((desc) => (
+                    <li key={desc} className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-[var(--accent)]" />
+                      <span>{desc}</span>
+                    </li>
                   ))}
                 </ul>
-                
-                <div className="flex flex-wrap gap-2">
-                  {exp.tags.map((tag, i) => (
-                    <span key={i} className="rounded-full bg-slate-200 dark:bg-primary/20 px-3 py-1 text-xs font-medium text-slate-700 dark:text-primary">
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {exp.tags.map((tag) => (
+                    <span key={tag} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-white/74">
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 };
