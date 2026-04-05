@@ -212,7 +212,140 @@ export const EXPERIENCES: Experience[] = [
   }
 ];
 
+/** Single source for Anukriti URLs (portfolio, MVP, AWS Builder Center). */
+export const ANUKRITI_URLS = {
+  portfolio: "https://anukritiai.abhimanyurb.com/",
+  mvp: "https://anukriti.abhimanyurb.com/",
+  builderProjectArticle:
+    "https://builder.aws.com/content/3A22NGhiEao2qxdd2Np4qCzahUV/aideas-predicting-drug-risks-before-clinical-trials-project-anukriti",
+  top50FinalistsAnnouncement:
+    "https://builder.aws.com/content/3BtudZ22UtOmORU4ii1Mgw0qyEI/aideas-our-50-finalists-announced",
+  top300Semifinals:
+    "https://builder.aws.com/content/3BEgQfoDlTFgf6mEH53H9KPrAXR/aideas-top-300-moving-to-the-judging-round",
+} as const;
+
 export const PROJECTS: Project[] = [
+  {
+    title: "Anukriti — Predicting Drug Risks Before Clinical Trials",
+    description:
+      "Anukriti is an AI-powered drug risk prediction system that identifies potential failures in drug candidates before clinical trials. It leverages machine learning and biological data to reduce cost, time, and risk in drug discovery.",
+    highlights: [
+      "Built for AWS 10,000 AI Ideas Challenge",
+      "Selected among Top 50 global finalists",
+      "Focused on early-stage drug safety prediction",
+      "Combines AI and bioinformatics concepts",
+    ],
+    impactLine:
+      "Aiming to reduce billion-dollar drug failures by identifying risks early in the pipeline.",
+    tags: [
+      "Python",
+      "Machine Learning",
+      "Scikit-learn",
+      "AWS",
+      "Bioinformatics",
+      "Data processing",
+      "APIs",
+    ],
+    featured: true,
+    link: ANUKRITI_URLS.portfolio,
+    mvpLink: ANUKRITI_URLS.mvp,
+    caseStudyLink: ANUKRITI_URLS.builderProjectArticle,
+    pressLinks: [
+      {
+        label: "Top 50 finalists announced — AWS Builder Center",
+        href: ANUKRITI_URLS.top50FinalistsAnnouncement,
+      },
+      {
+        label: "Top 300 semifinalists — judging round",
+        href: ANUKRITI_URLS.top300Semifinals,
+      },
+    ],
+  },
+  {
+    title: "Chitti Pay",
+    description:
+      "Chitti Pay is a cross-platform mobile product for small chit-fund operators. Organizers sign in with Firebase, create groups, manage members, track monthly payments, and record auction outcomes. The app includes a dashboard and ledger-style views for collection status. A 7-day trial transitions to a monthly Razorpay subscription; payment secrets stay on a small Express backend while Firestore holds operational data. The codebase is a pnpm monorepo with TypeScript, Expo (React Native), shared OpenAPI → Orval client code, and Zod validation.",
+    highlights: [
+      "Chit group lifecycle: create groups, members, payments, and auction records",
+      "Firebase Auth + Firestore for identity and real-time-friendly data",
+      "Razorpay subscription flow with server-side order creation and verification",
+      "Expo Router UI: dashboard, groups, ledger, profile, subscription paywall",
+      "Typed API surface: OpenAPI spec, generated client hooks, shared Zod schemas",
+      "Expo Application Services (EAS) for native iOS and Android builds",
+    ],
+    tags: [
+      "TypeScript",
+      "pnpm",
+      "Expo",
+      "React Native",
+      "Firebase",
+      "Firestore",
+      "Express",
+      "Razorpay",
+      "OpenAPI",
+      "Orval",
+      "Zod",
+      "TanStack Query",
+    ],
+  },
+  {
+    title: "Chitrakatha — Story operating system for solo novelists",
+    description:
+      "Chitrakatha is a canon-first story workspace: world bible, scenes, POV-locked novel drafts, and EPUB export for writers who care about continuity. A full-stack web app that treats continuity as a product feature, not an afterthought. Writers build a structured World Bible (setting + categorized rules), characters, and chapters/scenes in one place; AI generation is canon-aware using assembled project and scene context instead of repeated copy-paste prompts.",
+    highlights: [
+      "World Bible & characters — CRUD for world rules and character sheets; context flows into scene and project-level AI prompts.",
+      "Scene workflow — TipTap-based scene editor with autosave, metadata (location, time, mood), and character mentions synced to the backend.",
+      "Novel drafts — Prose from scenes with global POV modes (third-limited, first-person, omniscient third) and optional focal character; compare, regenerate from canon, and reconcile back into source scenes.",
+      "Publish path — EPUB export with chapter structure and navigation.",
+      "Stack — Next.js App Router, Prisma + PostgreSQL, TanStack Query, NextAuth; provider-agnostic AI with structured prompts.",
+    ],
+    impactLine:
+      "For serious self-publishers and worldbuilders who want consistent canon, controllable AI, and a clean EPUB—without juggling Docs, Notion, and chat threads.",
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "TanStack Query",
+      "NextAuth",
+      "TipTap",
+      "EPUB",
+      "AI",
+    ],
+  },
+  {
+    title: "DevContext — AI-Powered Developer Context Engine",
+    description:
+      "A full-stack developer productivity tool that eliminates the \"wait, where was I?\" problem. Developers connect their GitHub account, select repositories and branches, and instantly receive AI-generated summaries of recent commits — complete with semantic diff analysis, smart next-step suggestions, and daily standup drafts.",
+    highlights: [
+      "GitHub OAuth with repository and branch selection",
+      "Deep commit analysis: file-level diffs, addition/deletion stats, and cross-repo comparison mode",
+      "AI briefings via GPT-4o (streaming API): Next Steps and Standup Update modes",
+      "Dependency health: staleness detection across package.json, requirements.txt, go.mod, and Cargo.toml",
+      "Freemium tiers (Free / Pro / Team) with monthly AI usage tracking and upgrade gates",
+      "Workspace persistence and multi-repo compare (up to 3 repos)",
+      "Admin dashboard: analytics, grant management, and live plan controls",
+      "Stack — React 18 + Vite, Express 5, PostgreSQL + Drizzle, GitHub REST API, OpenAI, pnpm monorepo, Tailwind CSS, Framer Motion",
+    ],
+    impactLine:
+      "Brings repo context, diffs, and standup-ready narratives into one flow so you spend less time reconstructing what changed.",
+    tags: [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Express",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "GitHub API",
+      "OpenAI",
+      "GPT-4o",
+      "pnpm",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    link: "https://devcontext.abhimanyurb.com/",
+  },
   {
     title: "BlinkGuard",
     description: "An open-source browser extension and API service that pre-validates Solana Blinks (Blockchain Links) directly within Twitter/X. Provides real-time transaction simulation, community registry of malicious URLs, and visual safety indicators to protect users from drainers and suspicious contracts.",
@@ -337,6 +470,14 @@ export const CERTIFICATIONS: Certification[] = [
 ];
 
 export const ACHIEVEMENTS: Achievement[] = [
+  {
+    role: "Global Finalist — AWS 10,000 AI Ideas Challenge",
+    organization: "Amazon Web Services",
+    description:
+      "Selected as a Top 50 global finalist in the AWS 10,000 AI Ideas Challenge for building Anukriti, an AI-driven solution for predicting drug risks before clinical trials.",
+    icon: "emoji_events",
+    tags: ["Top 50 worldwide", "AI × Healthcare", "Drug discovery"],
+  },
   {
     role: "Volunteer",
     organization: "U&I Trust",

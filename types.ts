@@ -6,6 +6,15 @@ export interface Project {
   github?: string;
   chromeStore?: string;
   images?: string[];
+  /** Full-width emphasis on the projects grid */
+  featured?: boolean;
+  highlights?: string[];
+  impactLine?: string;
+  caseStudyLink?: string;
+  /** Live demo / prototype (e.g. Streamlit MVP) */
+  mvpLink?: string;
+  /** Official posts, announcements, press */
+  pressLinks?: { label: string; href: string }[];
 }
 
 export interface Experience {
